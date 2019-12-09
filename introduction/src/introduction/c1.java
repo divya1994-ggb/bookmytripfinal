@@ -39,15 +39,20 @@ public class c1 {
         dr.findElement(By.xpath(" /html/body/section[1]/div[2]/div/ul/li[1]/div[2]/div[2]/div[2]/a")).click();
         Thread.sleep(1000);
         dr.findElement(By.xpath(" //*[@id=\"btnPopupAccept\"]")).click();
-       
-        
-        //dr.findElement(By.xpath("//*[@id=\"pop_2\"]")).click();
-        
-      
-        
-        
-      
-        
+        Thread.sleep(2000);
+        dr.findElement(By.xpath("//*[@id=\"pop_2\"]")).click();
+        Thread.sleep(1000);
+        dr.findElement(By.xpath("//*[@id=\"proceed-Qty\"]")).click();
+        if(dr.findElement(By.xpath("/html/body/section[2]/div[3]/section[1]/div[1]/div[2]/div[4]/div/div[1]/table/tbody/tr[6]/td[2]/div[2]/a")).getAttribute("class").contains("_available"))
+        {
+        	System.out.println("Seat is available");
+        }
+        else
+        {
+        	System.out.println("Seats is booked");
+        }
+                             
+                                  	
 	}
 
 }
